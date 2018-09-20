@@ -97,10 +97,10 @@ def connect(
             runner.check_call([
                 "sudo", "ifconfig", "lo0", "alias", MAC_LOOPBACK_IP
             ])
-            runner.add_cleanup(
-                "Mac Loopback", runner.check_call,
-                ["sudo", "ifconfig", "lo0", "-alias", MAC_LOOPBACK_IP]
-            )
+           # runner.add_cleanup(
+           #     "Mac Loopback", runner.check_call,
+           #     ["sudo", "ifconfig", "lo0", "-alias", MAC_LOOPBACK_IP]
+           # )
             docker_interface = MAC_LOOPBACK_IP
 
         runner.launch(
